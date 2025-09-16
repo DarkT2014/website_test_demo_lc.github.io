@@ -2,111 +2,108 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>姓名 - 在线简历</title>
-  <meta name="description" content="一页式在线简历" />
+  <meta name="description" content="个人在线简历（单页，无外链，GitHub Pages 可直接部署）" />
   <style>
     :root{
-      --bg:#f7f7fb; --card:#ffffff; --text:#111; --muted:#666; --accent:#0f62fe; --border:#e5e7eb;
+      --bg:#f7f7f9; --card:#fff; --text:#0f172a; --muted:#64748b; --accent:#111827;
+      --border:#e5e7eb; --pill:#f1f5f9;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg)}
-    .wrap{max-width:980px;margin:32px auto;padding:0 16px}
-    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.05);padding:28px}
-    header{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
-    .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:1px solid var(--border);background:#ddd}
-    h1{margin:0;font-size:28px;letter-spacing:.5px}
-    .subtitle{margin:6px 0 0;color:var(--muted)}
-    .contact{margin-top:8px;font-size:14px;color:#222;display:flex;flex-wrap:wrap;gap:12px}
-    .badge{display:inline-block;font-size:12px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fafafa;margin-top:8px}
-    .section{margin-top:24px}
-    .section h2{font-size:18px;margin:0 0 10px;color:#0f172a}
-    .kv{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-    ul{margin:6px 0 0 20px;padding:0}
-    li{margin:6px 0}
-    .note{margin-top:14px;padding:10px 12px;border:1px dashed var(--border);border-radius:12px;background:#fcfcfd;color:#333}
-    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:12px}
-    @media (max-width:600px){header{grid-template-columns:1fr;text-align:center}.avatar{margin:0 auto}}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);
+      font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif}
+    .wrap{max-width:960px;margin:36px auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);padding:28px}
+    header{display:grid;grid-template-columns:120px 1fr;gap:20px;align-items:center}
+    .avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;border:1px solid var(--border);background:#ddd}
+    h1{margin:0 0 6px;font-size:30px;letter-spacing:.3px}
+    .subtitle{margin:0;color:var(--muted)}
+    .contact{margin-top:10px;color:var(--muted);font-size:14px}
+    .section{margin-top:26px}
+    .section h2{margin:0 0 12px;font-size:18px;letter-spacing:.5px;color:var(--accent)}
+    .news{display:grid;gap:12px}
+    .news-item{padding:10px 12px;background:var(--pill);border:1px solid var(--border);border-radius:12px}
+    .list{margin:8px 0 0 18px}
+    .list li{margin:6px 0}
+    .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .pill{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:#fafafa}
+    footer{margin-top:26px;text-align:center;color:var(--muted);font-size:12px}
+    @media (max-width:640px){
+      header{grid-template-columns:1fr;text-align:center}
+      .avatar{margin:0 auto}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="card">
-      <!-- 头部（头像可选；无头像可直接删掉 img 这一行） -->
+      <!-- 头部：头像 + 基本信息（无任何链接） -->
       <header>
-        <img class="avatar" src="avatar.jpg" alt="头像（可选）" />
+        <!-- 如不需要头像，可删除整行 img -->
+        <img class="avatar" src="images/people/your_photo.jpg" alt="头像（可选）">
         <div>
           <h1>姓名（例如：张三）</h1>
-          <p class="subtitle">职位头衔 · 研究方向/专业标签 · 所在城市</p>
-          <div class="contact">
-            <span>机构/团队：某某实验室 / 某某公司</span>
-            <span>办公地址：省市区道路门牌</span>
-            <span>电话：138-0000-0000</span>
-            <span>邮箱：name@example.com</span>
+          <p class="subtitle">职位/头衔（例如：研究员 / 实验室负责人）</p>
+          <p class="subtitle">单位/组织（例如：某研究院） · 城市/国家</p>
+          <div class="contact">办公室：XXX 路 XXX 号 · 电话：123-4567-8901 · 邮箱：example(at)mail(dot)com</div>
+          <div class="pill-row">
+            <span class="pill">研究方向A</span><span class="pill">研究方向B</span><span class="pill">研究方向C</span>
           </div>
-          <div class="badge">计算机视觉</div>
-          <div class="badge">机器学习</div>
-          <div class="badge">大模型/多模态</div>
         </div>
       </header>
 
-      <!-- 简介 -->
+      <!-- 研究兴趣（文字，可自行精炼为 3~6 条） -->
       <section class="section">
-        <h2>个人简介</h2>
-        <p>一句话定位 + 2～3 句扩展说明：当前所在单位的职责、过往背景与研究/业务兴趣，突出关键词与可量化成果（如主持项目、论文/专利、落地效果、服务客户等）。</p>
-      </section>
-
-      <!-- 任职与合作 -->
-      <section class="section">
-        <h2>任职与合作</h2>
-        <ul>
-          <li>某公司/研究院 · 负责人/研究员（起止时间）</li>
-          <li>某高校/学院 · 兼职导师/合作研究（起止时间）</li>
-          <li>其他社会任职（可选）</li>
+        <h2>研究兴趣</h2>
+        <ul class="list">
+          <li>方向 1：一句话描述你做什么、关注什么问题。</li>
+          <li>方向 2：一句话描述。</li>
+          <li>方向 3：一句话描述。</li>
         </ul>
       </section>
 
-      <!-- 研究方向 / 业务特长 -->
+      <!-- 新闻 / 动态（仿示例主页“News”，但无外链） -->
       <section class="section">
-        <h2>研究方向 / 业务特长</h2>
-        <div class="kv">
-          <div><strong>方向 A：</strong>简述你做什么、解决什么问题、有什么方法或数据/平台积累。</div>
-          <div><strong>方向 B：</strong>……</div>
-          <div><strong>方向 C：</strong>……</div>
+        <h2>新闻 / 动态</h2>
+        <div class="news">
+          <div class="news-item"><strong>[PAPER]</strong> 2025-08-23：我们的论文 XXX 被 XXX 录用。</div>
+          <div class="news-item"><strong>[ACTIVITY]</strong> 2025-07-16：受邀做主题报告 “XXXX”。</div>
+          <div class="news-item"><strong>[AWARD]</strong> 2025-05-22：获得某竞赛/奖项。</div>
         </div>
       </section>
 
-      <!-- 代表性成果（可列论文/项目/奖项；本页不放任何链接，仅列出文本信息） -->
+      <!-- 荣誉与奖励（保留列表样式，无外链） -->
       <section class="section">
-        <h2>代表性成果</h2>
-        <ul>
-          <li>论文/著作：题目，作者，会议/期刊，年份（如需可加 DOI 编号）</li>
-          <li>项目：项目名称，角色，核心贡献，取得的指标与影响</li>
-          <li>专利/奖项：名称，年份，授予机构</li>
-        </ul>
-        <div class="note">如需下载简历 PDF，可在仓库里另放一个 <code>resume.pdf</code>，并在此处写明“请从页面右上角下载仓库中的 resume.pdf”。（应领导要求，本页不放任何可点击链接）</div>
-      </section>
-
-      <!-- 联系方式（纯文本版） -->
-      <section class="section">
-        <h2>联系方式</h2>
-        <ul>
-          <li>邮箱：name@example.com</li>
-          <li>电话：138-0000-0000</li>
-          <li>地址：省市区道路门牌</li>
+        <h2>荣誉与奖励（精选）</h2>
+        <ul class="list">
+          <li>2025：某学术会议竞赛一等奖。</li>
+          <li>2024：某人才计划入选。</li>
+          <li>2023：某学会优秀青年奖。</li>
         </ul>
       </section>
 
-      <footer>
-        最后更新时间：<span id="ts"></span>
-      </footer>
+      <!-- 学术服务与活动（可按需精简） -->
+      <section class="section">
+        <h2>学术服务与活动</h2>
+        <ul class="list">
+          <li>期刊/会议服务：TPC / Guest Editor / Reviewer 等。</li>
+          <li>合作培养：某高校某学院 联培博士/硕士导师。</li>
+          <li>讲座与报告：某研讨会/讲习班报告。</li>
+        </ul>
+      </section>
+
+      <!-- 结尾时间戳（自动显示当天日期；无链接） -->
+      <footer>最后更新时间：<span id="ts"></span></footer>
     </div>
   </div>
+
   <script>
+    // 自动日期
     const d=new Date();
     document.getElementById('ts').textContent =
-      d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');
+      d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
   </script>
 </body>
 </html>
