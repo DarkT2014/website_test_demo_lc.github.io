@@ -3,153 +3,110 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>姓名 · 个人简历</title>
-  <meta name="description" content="简洁的一页个人在线简历" />
+  <title>姓名 - 在线简历</title>
+  <meta name="description" content="一页式在线简历" />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-        "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei",
-        sans-serif;
-      color: #333;
-      background: #f5f5f5;
-      line-height: 1.6;
+    :root{
+      --bg:#f7f7fb; --card:#ffffff; --text:#111; --muted:#666; --accent:#0f62fe; --border:#e5e7eb;
     }
-    .container {
-      max-width: 700px;
-      margin: 40px auto;
-      padding: 0 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    header {
-      padding: 32px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 32px;
-    }
-    header p.subtitle {
-      margin: 8px 0 0;
-      color: #666;
-      font-size: 18px;
-    }
-    .contact {
-      margin: 16px 0 0;
-      font-size: 14px;
-      color: #444;
-    }
-    .contact a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
-    section {
-      padding: 20px;
-      border-top: 1px solid #eee;
-    }
-    section h2 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      color: #111;
-    }
-    section .entry {
-      margin-bottom: 16px;
-    }
-    section .entry h3 {
-      margin: 0 0 4px;
-      font-size: 18px;
-      color: #222;
-    }
-    section .entry .time {
-      font-size: 14px;
-      color: #888;
-    }
-    section .entry p {
-      margin: 8px 0 0;
-      color: #444;
-    }
-    footer {
-      text-align: center;
-      padding: 24px 20px;
-      font-size: 12px;
-      color: #999;
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;font:16px/1.7 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;color:var(--text);background:var(--bg)}
+    .wrap{max-width:980px;margin:32px auto;padding:0 16px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.05);padding:28px}
+    header{display:grid;grid-template-columns:110px 1fr;gap:18px;align-items:center}
+    .avatar{width:110px;height:110px;border-radius:50%;object-fit:cover;border:1px solid var(--border);background:#ddd}
+    h1{margin:0;font-size:28px;letter-spacing:.5px}
+    .subtitle{margin:6px 0 0;color:var(--muted)}
+    .contact{margin-top:8px;font-size:14px;color:#222;display:flex;flex-wrap:wrap;gap:12px}
+    .badge{display:inline-block;font-size:12px;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fafafa;margin-top:8px}
+    .section{margin-top:24px}
+    .section h2{font-size:18px;margin:0 0 10px;color:#0f172a}
+    .kv{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    ul{margin:6px 0 0 20px;padding:0}
+    li{margin:6px 0}
+    .note{margin-top:14px;padding:10px 12px;border:1px dashed var(--border);border-radius:12px;background:#fcfcfd;color:#333}
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:12px}
+    @media (max-width:600px){header{grid-template-columns:1fr;text-align:center}.avatar{margin:0 auto}}
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <header>
-      <h1>张三 / Jian Zhao</h1>
-      <p class="subtitle">前端工程师 &amp; 工程化专家</p>
-      <div class="contact">
-        📧 <a href="mailto:zhangsan@example.com">zhangsan@example.com</a> ｜  
-        🌐 <a href="https://github.com/darkt2014">github.com/darkt2014</a> ｜  
-        📍 北京，中国
-      </div>
-    </header>
+  <div class="wrap">
+    <div class="card">
+      <!-- 头部（头像可选；无头像可直接删掉 img 这一行） -->
+      <header>
+        <img class="avatar" src="avatar.jpg" alt="头像（可选）" />
+        <div>
+          <h1>姓名（例如：张三）</h1>
+          <p class="subtitle">职位头衔 · 研究方向/专业标签 · 所在城市</p>
+          <div class="contact">
+            <span>机构/团队：某某实验室 / 某某公司</span>
+            <span>办公地址：省市区道路门牌</span>
+            <span>电话：138-0000-0000</span>
+            <span>邮箱：name@example.com</span>
+          </div>
+          <div class="badge">计算机视觉</div>
+          <div class="badge">机器学习</div>
+          <div class="badge">大模型/多模态</div>
+        </div>
+      </header>
 
-    <section>
-      <h2>个人简介</h2>
-      <p>一句话介绍，比如：“拥有 5 年前端开发经验，对 Web 性能优化与用户体验有深度理解，曾主导多个大型中后台项目上线落地。”</p>
-    </section>
+      <!-- 简介 -->
+      <section class="section">
+        <h2>个人简介</h2>
+        <p>一句话定位 + 2～3 句扩展说明：当前所在单位的职责、过往背景与研究/业务兴趣，突出关键词与可量化成果（如主持项目、论文/专利、落地效果、服务客户等）。</p>
+      </section>
 
-    <section>
-      <h2>工作经历</h2>
+      <!-- 任职与合作 -->
+      <section class="section">
+        <h2>任职与合作</h2>
+        <ul>
+          <li>某公司/研究院 · 负责人/研究员（起止时间）</li>
+          <li>某高校/学院 · 兼职导师/合作研究（起止时间）</li>
+          <li>其他社会任职（可选）</li>
+        </ul>
+      </section>
 
-      <div class="entry">
-        <h3>XX 科技有限公司 · 前端工程师</h3>
-        <div class="time">2022.03 – 至今 · 北京</div>
-        <p>负责运营后台产品的整体前端架构搭建与性能优化，把首页加载速度缩短 40%。</p>
-      </div>
+      <!-- 研究方向 / 业务特长 -->
+      <section class="section">
+        <h2>研究方向 / 业务特长</h2>
+        <div class="kv">
+          <div><strong>方向 A：</strong>简述你做什么、解决什么问题、有什么方法或数据/平台积累。</div>
+          <div><strong>方向 B：</strong>……</div>
+          <div><strong>方向 C：</strong>……</div>
+        </div>
+      </section>
 
-      <div class="entry">
-        <h3>ABC 互联网公司 · 前端实习</h3>
-        <div class="time">2021.06 – 2022.02 · 远程</div>
-        <p>参与活动页开发与联调，支持百万 PV 活动访问，对活动项目的可用性和跨浏览器稳定性负责。</p>
-      </div>
-    </section>
+      <!-- 代表性成果（可列论文/项目/奖项；本页不放任何链接，仅列出文本信息） -->
+      <section class="section">
+        <h2>代表性成果</h2>
+        <ul>
+          <li>论文/著作：题目，作者，会议/期刊，年份（如需可加 DOI 编号）</li>
+          <li>项目：项目名称，角色，核心贡献，取得的指标与影响</li>
+          <li>专利/奖项：名称，年份，授予机构</li>
+        </ul>
+        <div class="note">如需下载简历 PDF，可在仓库里另放一个 <code>resume.pdf</code>，并在此处写明“请从页面右上角下载仓库中的 resume.pdf”。（应领导要求，本页不放任何可点击链接）</div>
+      </section>
 
-    <section>
-      <h2>项目经验</h2>
+      <!-- 联系方式（纯文本版） -->
+      <section class="section">
+        <h2>联系方式</h2>
+        <ul>
+          <li>邮箱：name@example.com</li>
+          <li>电话：138-0000-0000</li>
+          <li>地址：省市区道路门牌</li>
+        </ul>
+      </section>
 
-      <div class="entry">
-        <h3>个人博客 & 小工具集</h3>
-        <div class="time">2023</div>
-        <p>基于 GitHub Pages 构建博客系统，同时开发若干前端小工具（如代码片段库、小型可视化 demos），展示项目与技术文章。</p>
-      </div>
-
-      <div class="entry">
-        <h3>UI 组件库</h3>
-        <div class="time">2022</div>
-        <p>独立搭建基于 React 的组件库，覆盖表单、按钮、对话框等通用组件，实现主题切换和按需加载功能。</p>
-      </div>
-    </section>
-
-    <section>
-      <h2>教育经历</h2>
-      <div class="entry">
-        <h3>某某大学 · 计算机科学与技术（本科）</h3>
-        <div class="time">2017 – 2021</div>
-        <p>主修内容包括算法设计、网络编程与软件工程，毕业设计题目：“xxx 前端可视化系统设计”。</p>
-      </div>
-    </section>
-
-    <footer>
-      最后更新：<span id="lastUpdate"></span>
-    </footer>
+      <footer>
+        最后更新时间：<span id="ts"></span>
+      </footer>
+    </div>
   </div>
-
   <script>
-    // 自动填当前日期
-    const now = new Date();
-    document.getElementById('lastUpdate').textContent =
-      now.getFullYear() + '-' +
-      String(now.getMonth() + 1).padStart(2, '0') + '-' +
-      String(now.getDate()).padStart(2, '0');
+    const d=new Date();
+    document.getElementById('ts').textContent =
+      d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,'0')+"-"+String(d.getDate()).padStart(2,'0');
   </script>
 </body>
 </html>
